@@ -1,19 +1,26 @@
 var repository =[
-  ['Bulbasaur',
-  0.7,
-  ['Grass', 'Poison']],
-  ['Charmander',
-  0.6,
-  ['Fire']],
-  ['Squirtle',
-  0.5,
-  ['Water']]
+  {
+    name:'Bulbasaur',
+    height: 0.7,
+    types :['Grass', 'Poison']
+  },
+  {
+    name:'Charmander',
+    height: 0.6,
+    types :['Fire']
+  },
+  {
+    name:'Squirtle',
+    height: 0.5,
+    types :['Water']
+  }
 ];
 
 for (var i = 0; i < repository.length; i++){
-  if (repository[i][1] > 0.6) {
-  document.write(repository[i][0] + ' (height: ' + repository[i][1] + ') Wow, that\'s big!');
-} else {
-  document.write(repository[i][0] + ' (height: ' + repository[i][1] + ')');
-}
+    var pokemon = repository[i];
+  if (pokemon.height > 0.6) {
+    document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ') Wow, that\'s big!' +'</p>');
+  } else {
+    document.write('<p>'+pokemon.name + ' (height: ' + pokemon.height + ')'+'</p>');
+  }
 }
