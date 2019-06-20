@@ -25,9 +25,25 @@ function add(item){
   repository.push(item);
 }
 
+
+function addListItem(pokemon){
+  var listItem = document.createElement('li');
+  var button = document.createElement('button');
+  button.innerText = pokemon.name;
+  listItem.appendChild(button);
+  $pokemonList.appendChild(listItem);
+  button.classList.add('pokemon-list_style');
+  $pokemonList.addEventListener('click', showDetails());
+}
+
+function showDetails(pokemon){
+  console.log(pokemon);
+}
+
 return {
    add: add,
-   getAll: getAll
+   getAll: getAll,
+   addListItem: addListItem
  };
 })();
 
@@ -37,10 +53,8 @@ pokemonRepository.add({
   types:['Electric']
 });
 
+var $pokemonList = document.querySelector('.pokemon-list');
+
 pokemonRepository.getAll().forEach(function(pokemon){
-  if (pokemon.height > 0.6) {
-   document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ') Wow, that\'s big!' +'</p>');
- } else {
-   document.write('<p>'+ pokemon.name + ' (height: ' + pokemon.height + ')'+'</p>');
- }
+  return pokemonRepository.addListItem(pokemon);
 });
