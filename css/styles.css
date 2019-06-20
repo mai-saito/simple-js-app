@@ -8,10 +8,34 @@ body {
 
 h1 {
   font-weight: 700;
-  font-size: 80px;
+  font-size: 60px;
+  margin-left: 30px;
 }
 
-* {
-  text-align: center;
-  margin-top: 80px;
+
+.pokemon-list{
+  list-style-type: none;
+}
+
+.pokemon-list_style {
+  border: none;
+  display: block;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 30px;
+  color: white;
+  background-color: lightblue;
+  text-decoration: none;
+  width: 100%;
+
+  /* adds spacing to the button and make button centered */
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.pokemon-list_style:hover,
+.pokemon-list_style:focus {
+  cursor: pointer;
+  opacity: 0.8;
 }
