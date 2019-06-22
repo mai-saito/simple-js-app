@@ -1,3 +1,4 @@
+(function(){
 var pokemonRepository = (function(){
   var repository =[
     {
@@ -56,3 +57,4 @@ function showDetails(pokemon){
 }
 
 pokemonRepository.getAll().forEach(addListItem);
+})();
