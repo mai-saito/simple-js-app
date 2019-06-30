@@ -84,11 +84,15 @@ function showModal(pokemon) {
   var modal = document.createElement('div');
   modal.classList.add('modal');
 
+  var exist = $modalContainer.querySelector('.modal');
+
   // Add the new modal content
   var closeButton = document.createElement('button');
   closeButton.classList.add('modal-close');
-  closeButton.innnerText = 'Close';
+  closeButton.innerText = 'Close';
   closeButton.addEventListener('click', hideModal);
+
+  if(exist)$modalContainer.removeChild(exist);
 
   var name = document.createElement('h1');
   name.innerText = pokemon.name;
@@ -103,6 +107,8 @@ function showModal(pokemon) {
   modal.appendChild(name);
   modal.appendChild(height);
   modal.appendChild(image);
+  console.log('Modal',$modalContainer);
+
   $modalContainer.appendChild(modal);
 
   $modalContainer.classList.add('is-visible');
